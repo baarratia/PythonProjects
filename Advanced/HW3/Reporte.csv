@@ -1,0 +1,9 @@
+Total Ganado por el SuperMercado: $118915
+
+Gasto Promedio por Cliente: $49.01690024732069
+
+TOP 10 productos mas comprados por tipo de cliente:
+	PREFERENCIAL : [(PAN, 1000), (LECHE, 529), (TALLARINES, 331), (MANZANA, 300), (TOALLA NOVA, 291), (ARROZ, 239), (YOGURT, 219), (TOMATE, 200), (CARNE, 200), (JUGO, 192)]
+
+Tiempo Promedio dentro del SuperMercado, por tipo de cliente:
+	PREFERENCIAL : 00:02:35
