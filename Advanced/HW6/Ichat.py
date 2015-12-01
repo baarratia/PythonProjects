@@ -2,10 +2,11 @@
 __author__ = 'Benja'
 import socket
 import threading
-import time
-import pickle
+
 from PyQt4 import QtCore
+
 from Manejo_Informacion import *
+
 
 class Cliente(QtCore.QObject):
     trigger = QtCore.pyqtSignal(object)
@@ -15,13 +16,12 @@ class Cliente(QtCore.QObject):
         super(Cliente, self).__init__(parent)
         self.usuario = usuario
         self.password = password
-        self.host =  '127.0.0.1'
+        self.host = '127.0.0.1'
         self.port = 12350
         self.s_cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.chats = {}
         self.grupos = {}
         self.conectado = False
-
 
     def probarconexion(self, registrar=None):
         try:
@@ -79,8 +79,8 @@ class Servidor(threading.Thread):
         self.s_servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.s_servidor.bind((self.host, self.port))
         self.s_servidor.listen(1)
-        self.clientes = {} #clientes conectados
-        self.grupos = {} #Grupos
+        self.clientes = {}  # clientes conectados
+        self.grupos = {}  # Grupos
 
     def escuchar(self, cliente, nombre):
         conectado = True
@@ -91,9 +91,9 @@ class Servidor(threading.Thread):
                 if type(mensaje[1]) == list:
                     self.grupos[mensaje[2]] = mensaje[1]
                     for i in mensaje[1]:
-                            if i in self.clientes:
-                                if i != mensaje[0]:
-                                    self.enviar(self.clientes[i][0], mensaje)
+                        if i in self.clientes:
+                            if i != mensaje[0]:
+                                self.enviar(self.clientes[i][0], mensaje)
                 else:
                     destino = mensaje[1]
                     if destino in self.clientes:

@@ -1,0 +1,1 @@
+Pretty basic program, a game made as a favor for a friend coursing his first course of programing on python

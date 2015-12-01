@@ -67,6 +67,7 @@ class Registro(QtGui.QWidget):
 
     def Setup(self, Lobby):
         self.Lobby = Lobby
+
     def Confirmar(self):
         self.usuario = self.lineEdit.text()
         self.password = self.lineEdit_2.text()
