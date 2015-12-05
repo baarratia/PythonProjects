@@ -10,10 +10,20 @@ class Robot:
         self.x2 = ''
         self.y2 = ''
         self.a1 = ''
+        self.px = ''
+        self.py = ''
+        self.arco = []
+        self.arco_enemigo = []
         self.pelota = False
         self.goles = 0
         self.modo = 'Balon'
         self.enemigo = enemigo
+
+    def set_inicio(self, arco, arco_enemigo):
+        self.arcox = (self.arco[0][0] + self.arco[1][0]) / 2
+        self.arcoy = (self.arco[0][1] + self.arco[1][1]) / 2
+        self.arco_enemigox = arco_enemigo
+        self.arco_enemigoy =
 
     def set_pos(self, x, y, x2, y2, px, py):
         self.x = x
@@ -25,9 +35,17 @@ class Robot:
         if self.pelota is False:
             if self.enemigo.pelota is False:
                 self.modo = 'Balon'
-                data = self.ir(px, py)
+                a=math.radians(angulo(px,py,self.arco_enemigox,self.arco_enemigoyy))
+                puntoairx=px-math.cos(a)*50
+                puntoairy=py-math.sin(a)*50
+                if distancia(self.x, self.y, px, py)
+                data = self.ir(puntoairx, puntoairy)
             else:
                 self.modo = 'Defender'
+                if distancia(self.x, self.y, self.arcox, self.arcoy) > 60:
+                    data = self.ir((self.arco[0][0] + arco[1][0]) / 2, (arco[0][1] + arco[1][1]) / 2)
+            else:
+                data = self.orientar(px, py)
         else:
             self.modo = 'Atacar'
 
