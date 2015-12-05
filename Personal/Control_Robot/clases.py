@@ -17,6 +17,7 @@ class Robot:
         self.pelota = False
         self.goles = 0
         self.modo = 'Balon'
+        self.llego = False
         self.enemigo = enemigo
 
     def set_inicio(self, arco, arco_enemigo):
@@ -38,10 +39,16 @@ class Robot:
                 a=math.radians(angulo(px,py,self.arco_enemigox,self.arco_enemigoy))
                 puntoairx=px-math.cos(a)*50
                 puntoairy=py-math.sin(a)*50
-                if distancia(self.x, self.y, puntoairx,  puntoairy) > 20:
+                if distancia(self.x, self.y, puntoairx,  puntoairy) > 20 and self.llego is False:
                     data = self.ir(puntoairx, puntoairy)
                 else:
-                    data = self.ir(px, py)
+                    self.llego = True
+                if self.llego is True:
+                    if distancia(self.x, self.y, self.px, self.py) > 20:
+                        data = self.ir(px, py)
+                    else:
+                        self.llego = False
+                        self.modo = 'Atacar'
 
             else:
                 self.modo = 'Defender'
