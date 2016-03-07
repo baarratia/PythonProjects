@@ -57,8 +57,8 @@ def angulo(x1, y1, x2, y2):
 def orientar(x1, y1, x2, y2, p1, p2):
     a1 = angulo(x1, y1, x2, y2)
     a2 = angulo(x1, y1, p1, p2)
-    amplitud = 35
-    pg = 75
+    amplitud = 5
+    pg = 85
 
     if abs(a2 - a1) <= amplitud:
         return 0, 0, 0

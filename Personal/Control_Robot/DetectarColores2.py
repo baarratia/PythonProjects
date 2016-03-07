@@ -12,7 +12,7 @@ from Comunicador import Comunicador_Robot
 
 # camara 0 notebook
 # camara 1 lab
-CAM = 1
+CAM = 0
 po = 0
 
 
@@ -63,6 +63,14 @@ cv2.createTrackbar('S max 4', 'Configuracion2', 0, 256, nothing)
 cv2.createTrackbar('V min 4', 'Configuracion2', 0, 256, nothing)
 cv2.createTrackbar('V max 4', 'Configuracion2', 0, 256, nothing)
 cv2.createTrackbar('Radio 4', 'Configuracion2', 0, 100, nothing)
+
+Hmin5 = cv2.getTrackbarPos('H min 5', 'Configuracion3')
+Hmax5 = cv2.getTrackbarPos('H max 5', 'Configuracion3')
+Smin5 = cv2.getTrackbarPos('S min 5', 'Configuracion3')
+Smax5 = cv2.getTrackbarPos('S max 5', 'Configuracion3')
+Vmin5 = cv2.getTrackbarPos('V min 5', 'Configuracion3')
+Vmax5 = cv2.getTrackbarPos('V max 5', 'Configuracion3')
+Radio5 = cv2.getTrackbarPos('Radio 5', 'Configuracion3')
 
 for file_ in os.listdir():
     if file_.endswith(".benja"):
