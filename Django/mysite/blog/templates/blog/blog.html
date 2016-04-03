@@ -1,0 +1,10 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+    {% for post in object_list %}
+        <h3><a href="/blog/{{post.id}}">  {{ post.title }}</a></h3>
+        <h6>{{ post.date }}</h6>
+        {{ post.body|safe|linebreaks }}
+    {% endfor %}
+{% endblock %}
+
