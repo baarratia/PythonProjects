@@ -5,6 +5,7 @@ sudoku = [[3, 0, 0], [0, 1, 0], [1, 0, 0]]
 
 
 def Recursiva(sudoku, x=0, y=0):
+    print(x,y)
     listaQ = []  # Comienza comprobando el caso base, si el sudoku está completo, retorna el sudoku
     for i in sudoku:
         for j in i:
@@ -53,13 +54,14 @@ def Recursiva(sudoku, x=0, y=0):
         return 'Sudoku imposible'
 
 print(sudoku)
+'''
 sudoku = []
 for i in range(3):
     fila = (input('ingrese fila {}: '.format(i))).split(',')
     for i in range(len(fila)):
         fila[i] = int(fila[i])
     sudoku.append(fila)
-
+'''
 sudoku = Recursiva(sudoku)
 print(sudoku)
 
